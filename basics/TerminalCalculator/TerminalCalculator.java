@@ -15,12 +15,23 @@ public class TerminalCalculator {
     double inputB = iPut.nextDouble();
 
 		switch (arOp) {
-      case "+":
+			case "+":
 				System.out.println(String.format("Result: %.2f + %.2f = %.2f\n", inputA, inputB, inputA + inputB));
 				break;
 			case "-":
 				System.out.println(String.format("Result: %.2f - %.2f = %.2f\n", inputA, inputB, inputA - inputB));
-		    break;
+		    	break;
+			case "*":
+				System.out.println(String.format("Result: %.2f * %.2f = %.2f\n", inputA, inputB, inputA * inputB));
+				break;
+			case "/":
+				if (inputB != 0) {
+					System.out.println(String.format("Result: %.2f / %.2f = %.2f\n", inputA, inputB, inputA / inputB));
+				} else {
+					System.out.println("Error: Can not do zero devision\n");
+				}
+			default:
+				System.out.println("There is not this kind of operation\n");
 		}
 
 		iPut.close();
